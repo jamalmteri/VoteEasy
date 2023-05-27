@@ -1,4 +1,4 @@
-# Voteeasy
+# VoteEasy
 Voting system
 
 VoteEasy
