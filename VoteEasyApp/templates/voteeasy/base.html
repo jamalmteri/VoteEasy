@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+
+    <title>{% block title%} {% endblock %}</title>
+    <meta name="description" content="...">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Theme -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="{% static 'css/theme.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vote.css' %}">
+    {% block extra_css %}{% endblock %}
+
+    <!-- Vendor : Embla Carousel 
+    <link rel="stylesheet" href="{% static 'vendors/vendor.embla.min.css' %}">-->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    {% include 'voteeasy/navbar.html' %}
+
+    <div class="container">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+
+    <!-- Footer -->
+    {% include 'voteeasy/footer.html' %}
+
+    <!-- Javascripts -->
+    <script src="{% static 'js/theme.min.js' %}"></script>
+
+    <!-- Vendor : Jarallax -->
+    <script src="{% static 'vendors/jarallax/dist/jarallax.min.js' %}"></script>
+    <script src="{% static 'vendors/jarallax/dist/jarallax-element.min.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+    <!-- Vendor : Embla Carousel -->
+    <!-- <script src="../assets/vendors/embla-carousel/embla-carousel.umd.js"></script>
+    <script src="../assets/vendors/vendor.embla.min.js"></script> -->
+
+</body>
+</html>
