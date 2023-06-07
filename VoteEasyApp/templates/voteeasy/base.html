@@ -29,8 +29,14 @@
     <!-- Navbar -->
     {% include 'voteeasy/navbar.html' %}
 
-    <div class="container">
+    <div class="containerrrrr">
         {% block content %}
+
+        {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}! (<a href="{% url 'logout' %}">Logout</a>)</p>
+      {% else %}
+        <p><a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Register</a></p>
+      {% endif %}
 
         {% endblock %}
     </div>
