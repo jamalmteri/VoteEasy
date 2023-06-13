@@ -1,0 +1,65 @@
+{% extends 'voteeasy/base.html' %}
+
+{% block content %}
+
+
+{% for election in elections %}
+    <h2>{{ election.name }}</h2>
+    <ul>
+        {% for candidate in election.candidates.all %}
+            <li>{{ candidate.name }}</li>
+        {% endfor %}
+    </ul>
+{% empty %}
+    <p>No elections available.</p>
+{% endfor %}
+<style>
+  .btn-group-sm>.btn-voter {
+    border-radius: .4rem;
+    font-size: 1rem;
+    padding: .16rem 1rem !important;
+}
+</style>
+
+
+
+  <section class="vh-100" style="background-color: #eee;">
+    <div class="container py-5 h-100" style="max-width: 900px;">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card border-dark bg-light rounded-3">
+            <div class="card-body p-4">
+              <div class="d-md-flex align-items-md-center mb-4">
+                <div class="flex-shrink-0">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-2.webp"
+                    alt="Placeholder" class="img-fluid rounded-circle border border-dark border-2" style="width: 100px;">
+                </div>
+                <div class="flex-md-grow-1 ms-md-3 mt-3 mt-md-0">
+                  <div class="d-flex flex-column flex-md-row align-items-md-center mb-2">
+                    <p class="mb-0 me-2">John Doe</p>
+                    
+                  </div>
+                  <div>
+                    <p class="mb-0 me-2">CCM</p>
+                  </div>
+                  <div>
+                    <button type="button" class="btn btn-outline-dark btn-rounded btn-sm btn-voter" data-mdb-ripple-color="dark">+ Follow</button>
+                    <button type="button" class="btn btn-outline-dark btn-rounded btn-sm btn-voter" data-mdb-ripple-color="dark">See profile</button>
+                  </div>
+                </div>
+                <div class="flex-md-grow-1 ms-md-3 mt-3 mt-md-0 text-center">
+                  <p class="mb-0 me-2">312</p>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  
+  {% endblock %}

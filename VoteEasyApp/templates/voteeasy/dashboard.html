@@ -1,30 +1,59 @@
-
 {% extends 'voteeasy/base.html' %}
-
-{% block title %}Landing Page{% endblock %}
 
 {% block content %}
 
-
-<!-- Home page content -->
-<section>
-  <div class="container" style="background-color: #f4f4f4; padding: 12px;">
-
+<!-- Hero section -->
+<section class="py-5">
+  <div class="container">
     <div class="row">
-      <div class="col-sm-8 col-md-6 col-lg-8 mx-auto">
-        <h1>Welcome to the Dashboard</h1>
-        <p>Hello, {{ user.username }}!</p>
-        <a href="{% url 'logout' %}">Logout</a>
-        <h2>Welcome to the Election System!</h2>
-        <p>Thank you for registering. You are now logged in and can access the features of the election system.</p>
-        <p>Customize this landing page according to your needs.</p>
-   
+      <div class="col-lg-6 d-flex align-items-center" style="padding: 16px;">
+        <div>
+          <h4>Hello, <b>{{ user.username }}!</b></h4>
+          <h1 class="display-6 text-secondary mb-4">Welcome to the Voteeasy</h1>
+          <p class="lead mt-4">Welcome to VoteEasy Election system and Thank you for registering. You are now logged in
+            and can access the features of the election system. If you find any difficulty feel free to seek our support
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card bg-light shadow-lg rounded-lg mt-4">
+          <div class="card-body">
+            <h3 class="card-title mb-4">Ongoing Elections</h3>
+            {% if ongoing_elections %}
+            <div class="row">
+              {% for election in ongoing_elections %}
+              <div class="col-md-12 mb-4">
+                <div class="card shadow-sm d-flex flex-row align-items-center">
+
+                  <div class="card-body">
+                    <h5 class="card-title">{{ election.name }}</h5>
+                    <p class="card-text">Start Date: {{ election.start_date }}</p>
+                    <p class="card-text">End Date: {{ election.end_date }}</p>
+                    <!-- Add other election details here -->
+                  </div>
+                  <div class="card-footer bg-white ml-auto">
+                    <a href="{% url 'candidate_list' election_id=election.id %}" class="btn btn-primary btn-sm">View
+                      Candidates</a>
+                  </div>
+                </div>
+              </div>
 
 
-</div>
-</div>
-</div>
+
+
+
+
+              {% endfor %}
+            </div>
+            {% else %}
+            <p class="mt-4">No ongoing elections.</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
- 
 
-  {% endblock %}
+{% endblock %}

@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from .models import Candidate, Election, TanzaniaRegion
 
 class RegistrationForm(UserCreationForm):
     name = forms.CharField(max_length=100)
@@ -19,3 +20,15 @@ class RegistrationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'password1', 'password2', 'name', 'email', 'date_of_birth', 'national_id', 'state')
+
+
+class CandidateForm(forms.ModelForm):
+    state = forms.ModelChoiceField(queryset=TanzaniaRegion.objects.all())
+    class Meta:
+        model = Candidate
+        fields = ['name', 'party', 'position', 'state']
+
+class ElectionForm(forms.ModelForm):
+    class Meta:
+        model = Election
+        fields = ['name', 'start_date', 'end_date', 'candidates']
