@@ -1,0 +1,161 @@
+{% extends 'voteeasy/base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<!-- Page title -->
+<section class="py-6 bg-gray-200 text-center">
+  <div class="container">
+
+    <span class="d-inline-grid gap-auto-2 text-primary">
+      <span>Account</span>
+      <svg class="transform-flip-x-rtl" height="18px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+      </svg>
+    </span>
+
+    <h1 class="display-4 fw-bold">Voter Registration</h1>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-7 col-md-7 col-lg-7 mx-auto">
+
+        {% if form.errors %}
+        <div class="error">
+          <ul>
+            {% for field_errors in form.errors.values %}
+            {% for error in field_errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        <form method="POST">
+          {% csrf_token %}
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-lg-6">
+
+                <div class="form-floating">
+                  <input required type="text" class="form-control" id="{{ form.name.id_for_label }}"
+                    name="{{ form.name.html_name }}" placeholder="Name">
+                  <label for="{{ form.name.id_for_label }}">Name</label>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-floating">
+                  <input required type="email" class="form-control" id="{{ form.email.id_for_label }}"
+                    name="{{ form.email.html_name }}" placeholder="Email">
+                  <label for="{{ form.email.id_for_label }}">Email</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-floating">
+                  <input required type="text" class="form-control" id="{{ form.username.id_for_label }}"
+                    name="{{ form.username.html_name }}" placeholder="Username">
+                  <label for="{{ form.username.id_for_label }}">Username</label>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-floating">
+                  <input required type="password" class="form-control" id="{{ form.password1.id_for_label }}"
+                    name="{{ form.password1.html_name }}" placeholder="Password">
+                  <label for="{{ form.password1.id_for_label }}">Password</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-floating">
+                  <input required type="password" class="form-control" id="{{ form.password2.id_for_label }}"
+                    name="{{ form.password2.html_name }}" placeholder="Confirm Password">
+                  <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-floating">
+                  <input required type="date" class="form-control" id="{{ form.date_of_birth.id_for_label }}"
+                    name="{{ form.date_of_birth.html_name }}" placeholder="Date of Birth">
+                  <label for="{{ form.date_of_birth.id_for_label }}">Date of Birth</label>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-floating">
+                  <input required type="text" class="form-control" id="{{ form.national_id.id_for_label }}"
+                    name="{{ form.national_id.html_name }}" placeholder="National ID">
+                  <label for="{{ form.national_id.id_for_label }}">National ID</label>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-floating">
+                  <input required type="text" class="form-control" id="{{ form.state.id_for_label }}"
+                    name="{{ form.state.html_name }}" placeholder="State">
+                  <label for="{{ form.state.id_for_label }}">State</label>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+          <!-- agree 
+        <label class="d-flex align-items-center mb-4">
+          <input required class="d-none-cloaked" type="checkbox" name="switch-checkbox" value="1">
+          <i class="switch-icon switch-icon-primary"></i>
+          <span class="px-3 user-select-none">I agree <a href="#!" target="_blank" class="link-muted text-dashed">terms &amp; conditions</a></span>
+        </label> -->
+
+          <!-- submit button -->
+          <div class="d-grid mb-4">
+            <button type="submit" class="btn btn-primary">
+              <span>Sign up</span>
+              <svg class="transform-flip-x-rtl" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z">
+                </path>
+              </svg>
+            </button>
+          </div>
+
+
+        </form>
+
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+
+
+{% endblock %}

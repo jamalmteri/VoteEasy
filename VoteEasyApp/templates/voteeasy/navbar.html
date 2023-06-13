@@ -1,267 +1,88 @@
+{% load static %}
+
 <nav class="py-3 navbar navbar-expand-lg navbar-light bg-white shadow navbar-autohide">
+  <div class="container">
+    <!-- brand / logo -->
+    <a class="navbar-brand" href="{% url 'index' %}">
+      <img src="{% static 'images/vote-logo.png' %}" width="136" height="40" alt="...">
+    </a>
 
-    <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent"
+      aria-controls="navbarMainContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <!-- brand / logo -->
-      <a class="navbar-brand" href="index.html">
-        <img src="../demo.files/logo/logo_dark.png" width="136" height="40" alt="...">
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent"
-        aria-controls="navbarMainContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarMainContent">
-
-        <!-- mobile close -->
-        <div class="d-flex d-lg-none pb-3 justify-content-between align-items-center">
-          <img src="../demo.files/logo/logo_dark.png" width="136" height="40" alt="...">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent"
-            aria-controls="navbarMainContent" aria-expanded="false" aria-label="Toggle navigation">
-            <svg height="28px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-
-        <ul class="navbar-nav ms-auto">
-
-          <li class="nav-item dropdown dropdown-hover">
-            <a class="nav-link px-3 dropdown-toggle" href="#" id="navbarLanding" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Landing
-            </a>
-
-            <ul class="dropdown-menu dropdown-animate shadow-lg p-3" aria-labelledby="navbarLanding">
-              <li><a class="dropdown-item active" href="index.html">Default</a></li>
-              <li><a class="dropdown-item" href="landing-saas-1.html">SAAS 1</a></li>
-              <li><a class="dropdown-item" href="landing-saas-2.html">SAAS 2 <span
-                    class="badge bg-light text-dark">new</span></a></li>
-              <li><a class="dropdown-item" href="landing-business.html">Business</a></li>
-              <li><a class="dropdown-item" href="landing-agency.html">Agency <span
-                    class="badge bg-light text-dark">new</span></a></li>
-              <li class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="landing-hosting.html">Hosting</a></li>
-              <li><a class="dropdown-item" href="landing-medical.html">Medical</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item dropdown dropdown-hover">
-            <a class="nav-link px-3 dropdown-toggle" href="#" id="navbarPages" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Pages
-            </a>
-
-            <!--
-                
-                Mega Dropdown Sizes:
-                  .dropdown-mega-sm     300px
-                  .dropdown-mega-md     400px
-                  .dropdown-mega-lg     600px
-                  .dropdown-mega-xl     700px
-                  .dropdown-mega-xxl    800px
-
-              -->
-            <div class="dropdown-menu dropdown-mega-md dropdown-animate shadow-lg p-3" aria-labelledby="navbarPages">
-
-              <div class="row g-2">
-
-                <!-- col 1 -->
-                <ul class="col-lg-5 list-unstyled">
-
-                  <li><a class="dropdown-item" href="page-about.html">About Us</a>
-                  <li><a class="dropdown-item" href="page-services.html">Services</a>
-                  <li><a class="dropdown-item" href="page-pricing.html">Pricing</a>
-                  <li><a class="dropdown-item" href="page-career.html">Career</a>
-                  <li><a class="dropdown-item" href="page-faq.html">FAQ</a>
-                  <li><a class="dropdown-item" href="page-terms.html">Terms / Privacy</a>
-                  <li><a class="dropdown-item" href="page-customers.html">Customers</a>
-
-                </ul>
-
-                <!-- col 2 -->
-                <ul class="col-lg-7 list-unstyled">
-
-                  <li class="dropend dropdown-hover">
-                    <a class="dropdown-item dropdown-toggle" href="#" id="navbarPagesSignIn" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      Account : Sign In
-                    </a>
-                    <ul class="dropdown-menu dropdown-animate shadow-lg p-3 mx-0" aria-labelledby="navbarPagesSignIn">
-                      <li><a class="dropdown-item" href="account-signin-classic.html">Classic</a></li>
-                      <li><a class="dropdown-item" href="account-signin-cover.html">Cover</a></li>
-                      <li><a class="dropdown-item" href="#"
-                          data-sow-modal='{"source":"account-signin-modal-vertical.html","modalBackdrop":"static","dialogClass":"modal-dialog-centered"}'>Modal
-                          Vertical</a></li>
-                      <li><a class="dropdown-item" href="#"
-                          data-sow-modal='{"source":"account-signin-modal-horizontal.html","modalBackdrop":"static","dialogClass":"modal-lg modal-dialog-centered"}'>Modal
-                          Horizontal</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropend dropdown-hover">
-                    <a class="dropdown-item dropdown-toggle" href="#" id="navbarPagesSignUp" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      Account : Sign Up
-                    </a>
-                    <ul class="dropdown-menu dropdown-animate shadow-lg p-3 mx-0" aria-labelledby="navbarPagesSignUp">
-                      <li><a class="dropdown-item" href="account-signup-classic.html">Classic</a></li>
-                      <li><a class="dropdown-item" href="account-signup-cover.html">Cover</a></li>
-                      <li><a class="dropdown-item" href="#"
-                          data-sow-modal='{"source":"account-signup-modal-vertical.html","modalBackdrop":"static","dialogClass":"modal-dialog-centered"}'>Modal
-                          Vertical</a></li>
-                      <li><a class="dropdown-item" href="#"
-                          data-sow-modal='{"source":"account-signup-modal-horizontal.html","modalBackdrop":"static","dialogClass":"modal-lg modal-dialog-centered"}'>Modal
-                          Horizontal</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropend dropdown-hover">
-                    <a class="dropdown-item dropdown-toggle" href="#" id="navbarPagesPassword" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      Account : Password
-                    </a>
-                    <ul class="dropdown-menu dropdown-animate shadow-lg p-3 mx-0" aria-labelledby="navbarPagesPassword">
-                      <li><a class="dropdown-item" href="account-password-classic.html">Classic</a></li>
-                      <li><a class="dropdown-item" href="account-password-cover.html">Cover</a></li>
-                      <li><a class="dropdown-item" href="#"
-                          data-sow-modal='{"source":"account-password-modal-vertical.html","modalBackdrop":"static","dialogClass":"modal-dialog-centered"}'>Modal
-                          Vertical</a></li>
-                      <li><a class="dropdown-item" href="#"
-                          data-sow-modal='{"source":"account-password-modal-horizontal.html","modalBackdrop":"static","dialogClass":"modal-lg modal-dialog-centered"}'>Modal
-                          Horizontal</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropend dropdown-hover">
-                    <a class="dropdown-item dropdown-toggle" href="#" id="navbarPagesContact" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      Contact
-                    </a>
-                    <ul class="dropdown-menu dropdown-animate shadow-lg p-3 mx-0" aria-labelledby="navbarPagesContact">
-                      <li><a class="dropdown-item" href="page-contact-classic.html">Classic</a></li>
-                      <li><a class="dropdown-item" href="page-contact-cover.html">Cover</a></li>
-                      <li><a class="dropdown-item" href="#"
-                          data-sow-modal='{"source":"page-contact-modal.html","dialogClass":"modal-dialog-centered"}'>Modal</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropend dropdown-hover">
-                    <a class="dropdown-item dropdown-toggle" href="#" id="navbarPagesHc" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      Help Center
-                    </a>
-                    <ul class="dropdown-menu dropdown-animate shadow-lg p-3 mx-0" aria-labelledby="navbarPagesHc">
-                      <li><a class="dropdown-item" href="page-help-center-index.html">Index</a></li>
-                      <li><a class="dropdown-item" href="page-help-center-article.html">Article</a></li>
-                    </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="page-coming-soon.html">Coming Soon</a></li>
-                  <li><a class="dropdown-item" href="page-404.html">404 Page</a></li>
-
-                </ul>
-
-              </div>
-
-            </div>
-
-          </li>
-
-          <li class="nav-item dropdown dropdown-hover">
-            <a class="nav-link px-3 dropdown-toggle" href="#" id="navbarBlog" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Portfolio
-            </a>
-
-            <ul class="dropdown-menu dropdown-animate shadow-lg p-3" aria-labelledby="navbarBlog">
-              <li><a class="dropdown-item" href="portfolio-list-grid.html">List Grid</a></li>
-              <li><a class="dropdown-item" href="portfolio-project-sidebar.html">Project &ndash; Sidebar</a></li>
-              <li><a class="dropdown-item" href="portfolio-project-slider.html">Project &ndash; Slider</a></li>
-              <li><a class="dropdown-item" href="portfolio-project-full.html">Project &ndash; Full</a></li>
-              <li><a class="dropdown-item" href="portfolio-project-simple.html">Project &ndash; Simple</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item dropdown dropdown-hover">
-            <a class="nav-link px-3 dropdown-toggle" href="#" id="navbarShop" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Shop
-            </a>
-
-            <!--
-                
-                Mega Dropdown Sizes:
-                  .dropdown-mega-sm     300px
-                  .dropdown-mega-md     400px
-                  .dropdown-mega-lg     600px
-                  .dropdown-mega-xl     700px
-                  .dropdown-mega-xxl    800px
-
-              -->
-            <div class="dropdown-menu dropdown-mega-xxl dropdown-animate overflow-hidden shadow-lg p-0"
-              aria-labelledby="navbarShop">
-              <div class="row g-2">
-
-                <!-- image bg -->
-                <div
-                  class="col-lg-5 px-3 py-5 bg-cover position-relative overlay overlay-opacity-5 text-white d-flex flex-column align-items-center justify-content-center"
-                  style="background-image: url(../demo.files/images/unsplash/600x600/idin-ebrahimi-JXPP3xFbb-k-unsplash.jpg);">
-
-                  <div class="text-center m-3"><!-- cart icon -->
-                    <img class="w-50 img-fluid" src="../demo.files/logo/logo_symbol.png" alt="...">
-                  </div>
-
-                  <p class="m-0 lead">
-                    Atropos Ecommerce
-                  </p>
-
-                </div>
-
-                <div class="col p-3">
-
-                  <!-- title -->
-                  <p class="m-0 p-3 pb-2 text-primary">
-                    Ecommerce Pages
-                  </p>
-
-                  <div class="row g-2">
-
-                    <!-- col 1 -->
-                    <div class="col-lg-6 mb-3">
-
-                      <a class="dropdown-item" href="shop-home.html">Home Default</a>
-                      <a class="dropdown-item" href="shop-category-grid.html">Categories Grid</a>
-                      <a class="dropdown-item" href="shop-category-list.html">Categories List</a>
-                      <a class="dropdown-item" href="shop-product-single.html">Single Product</a>
-
-                    </div>
-
-                    <!-- col 2 -->
-                    <div class="col-lg-6 mb-3">
-
-                      <a class="dropdown-item" href="shop-cart.html">Cart</a>
-                      <a class="dropdown-item" href="shop-cart-empty.html">Cart Empty</a>
-                      <a class="dropdown-item" href="shop-checkout.html">Checkout</a>
-                      <a class="dropdown-item" href="shop-invoice.html">Invoice</a>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link px-3" href="../documentation/">Documentation</a>
-          </li>
-
-        </ul>
-
+    <div class="collapse navbar-collapse" id="navbarMainContent">
+      <!-- mobile close -->
+      <div class="d-flex d-lg-none pb-3 justify-content-between align-items-center">
+        <img src="{% static 'images/vote-logo.png' %}" width="136" height="40" alt="...">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent"
+          aria-controls="navbarMainContent" aria-expanded="false" aria-label="Toggle navigation">
+          <svg height="28px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
 
-    </div>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link px-3" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="#">Knowledge Center</a>
+        </li>
+       
 
-  </nav>
+        
+
+        <!-- Add these new pages to the navbar -->
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link px-3" href="{% url 'dashboard' %}">Dashboard</a>
+        </li>
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link px-3" href="{% url 'ongoing_elections' %}">Elections</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link px-3" href="{% url 'contact' %}">Contact</a>
+        </li>
+        {% if user.is_authenticated %}
+        <!-- Show authenticated user-specific links -->
+        <li class="nav-item dropdown dropdown-hover">
+          <a class="nav-link px-3 dropdown-toggle" href="#" id="navbarLanding" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Accounts
+          </a>
+          <ul class="dropdown-menu dropdown-animate shadow-lg p-3" aria-labelledby="navbarLanding">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+            <li class="dropdown-divider"></li>
+          </ul>
+        </li>
+        {% else %}
+        <!-- Show links for non-authenticated users -->
+        <li class="nav-item dropdown dropdown-hover">
+          <a class="nav-link px-3 dropdown-toggle" href="#" id="navbarLanding" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Accounts
+          </a>
+          <ul class="dropdown-menu dropdown-animate shadow-lg p-3" aria-labelledby="navbarLanding">
+            <li class="nav-item">
+              <a class="nav-link px-3" href="{% url 'register' %}">Registration</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-3" href="{% url 'login' %}">Login</a>
+            </li>
+          </ul>
+        </li>
+        {% endif %}
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
